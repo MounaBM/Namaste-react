@@ -25,9 +25,14 @@
 -Code Spliting
 
 -Differential Bundling - support older browsers
+
 -Diagnostic
+
 -Error Handling
+
 -Https
+
 -Tree shacking- remove unused code
+
 -Different dev and production bundles
 
