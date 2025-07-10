@@ -1,17 +1,24 @@
  import React from 'react'
  import ReactDOM from 'react-dom/client'
 
- const parent = React.createElement("div" , {id:"parent"},
-    [React.createElement("div" , {id:"child1"},
-        [React.createElement("h1",{id:"heading"},"Hi World From React , Am h1 tag"),
-        React.createElement("h2",{id:"heading"},"Hi World From React , Am h2 tag")]
-    ),
-    React.createElement("div" , {id:"child2"},
-        [React.createElement("h1",{id:"heading"},"Hi World From React , Am h1 tag"),
-        React.createElement("h2",{id:"heading"},"Hi World From React , Am h2 tag")]
-    )]
- );
+
+ const elem = <span>HI</span>
+
+//React Element
+ const heading =  (
+    <h1>{elem} , Namaste React from React Element</h1>
+ )
+
+ const number = 1000;
+
+ //React Function
+ const HeadingComponent = () =>(
+    <div className='container'>
+    {heading}{number}
+    <h1>Namaste React From React Function</h1>
+    </div>
+ )
 
  const root = ReactDOM.createRoot(document.getElementById("root"));
 
-  root.render(parent)
+ root.render(<HeadingComponent/>)
