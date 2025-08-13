@@ -19,8 +19,9 @@
     padding: 10px;
 }
 
-.search{
+.filter-btn{
     margin: 20px 0px;
+    cursor: pointer;
 }
 
 .res-container{
