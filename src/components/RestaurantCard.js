@@ -2,7 +2,7 @@ import {CDN_URL} from '../utils/constants'
 
 const RestroCards = (probs) =>{
    const {resData} = probs;
-   const {cloudinaryImageId , name ,cuisines ,avgRating , costForTwo , deliveryTime} = resData
+   const {cloudinaryImageId , name ,cuisines ,avgRating , costForTwo , sla} = resData?.info
    return (
       <div className='res-card' style={{backgroundColor : "#f0f0f0"}}>
          <img className='res-logo' src={CDN_URL +
@@ -11,7 +11,7 @@ const RestroCards = (probs) =>{
          <h4>{cuisines.join(', ')}</h4>
          <h4>{avgRating} starts</h4>
          <h4>{costForTwo} </h4>
-         <h4>{deliveryTime} minutes</h4>
+         <h4>{sla?.slaString}</h4>
       </div>
    );
  }

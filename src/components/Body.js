@@ -1,7 +1,8 @@
 import RestroCards from './RestaurantCard';
 import resList from '../utils/mockData';
 import { useState , useEffect} from 'react';
-import Shimmer from './Shimmer'
+import Shimmer from './Shimmer';
+import { Link } from 'react-router-dom';
 
 const Body = () =>{
     const [listOfRestaurant, setListOfRestaurant] = useState([])
@@ -17,8 +18,8 @@ const Body = () =>{
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING")
 
         const json = await data.json();
-        setListOfRestaurant((json?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants).map(item => item.info));
-        setFilteredRestaurant((json?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants).map(item => item.info))
+        setListOfRestaurant(json?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurant(json?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
    return listOfRestaurant.length === 0 ? <Shimmer/> : (
@@ -29,7 +30,7 @@ const Body = () =>{
         }}/>
         <button onClick={()=>{
             let filterdataList = listOfRestaurant.filter(restro => 
-                restro.name.toLowerCase().includes(searchText.toLowerCase()))
+                restro.info.name.toLowerCase().includes(searchText.toLowerCase()))
             setFilteredRestaurant(filterdataList);
         }}>Serach</button>
         <button className='filter-btn' onClick={()=>{
@@ -39,7 +40,7 @@ const Body = () =>{
         }>Top Rated Restaurants</button>
       </div>
       <div className='res-container'>
-        {filteredRestaurant.map(restaurant => <RestroCards key={restaurant.id} resData = {restaurant}/>)}
+        {filteredRestaurant.map(restaurant => <Link key={restaurant?.info?.id} to={"/restarurants/"+restaurant?.info?.id}><RestroCards resData = {restaurant}/></Link>)}
       </div>
       </div>
    );
