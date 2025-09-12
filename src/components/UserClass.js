@@ -23,15 +23,15 @@ class UserClass extends React.Component{
     }
 
     componentDidUpdate(){
-        console.log("component did update")
+        // console.log("component did update")
     }
 
     componentWillUnmount(){
-        console.log("component will unmount")
+        // console.log("component will unmount")
     }
 
     render(){
-        console.log(this.state.userInfo)
+        // console.log(this.state.userInfo)
     const {name , location , avatar_url} = this.state.userInfo
     // console.log(this.props.name  + "Child render")
     return (
