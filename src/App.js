@@ -9,6 +9,9 @@
  import { createBrowserRouter, RouterProvider , Outlet } from 'react-router-dom';
 import Shimmer from './components/Shimmer';
 import UserContext from './utils/UserContext';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
+import Cart from './components/Cart';
 
 
  const Groceri = lazy(()=> import('./components/Groceri'))
@@ -26,12 +29,14 @@ import UserContext from './utils/UserContext';
    setUserName(data.name)
  })
    return (
+      <Provider store={appStore}>
       <UserContext.Provider value={{loggedInUser : userName , setUserName}}>
       <div className='app'>
          <Header />
          <Outlet />
       </div>
       </UserContext.Provider>
+      </Provider>
    )
  }
 
@@ -55,7 +60,10 @@ import UserContext from './utils/UserContext';
              {
                path:'/restarurants/:resId' , 
                element:<RestaurantMenu/>
-            }
+            },
+            {
+               path:'/cart' , element:<Cart/>
+            },
    ]
        , errorElement:<Error/>
    },
