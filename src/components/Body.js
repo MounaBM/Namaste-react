@@ -34,17 +34,19 @@ const Body = () =>{
    return listOfRestaurant.length === 0 ? <Shimmer/> : (
       <div className='body'>
       <div className='my-4'>
-        <input className='border border-solid border-black rounded-md m-4'  type='text' value={searchText} onChange={(e)=>{
+        <input className='border border-solid border-black rounded-md m-4' data-testid="searchInput"
+         type='text' value={searchText} onChange={(e)=>{
             setSearchText(e.target.value)
         }}/>
         <button className='bg-blue-500 px-2 py-1 rounded-md mr-2 text-white' onClick={()=>{
             let filterdataList = listOfRestaurant.filter(restro => 
                 restro.info.name.toLowerCase().includes(searchText.toLowerCase()))
             setFilteredRestaurant(filterdataList);
-        }}>Serach</button>
+        }}>Search</button>
         <button className='bg-gray-500 rounded-md px-2 py-1 text-white' onClick={()=>{
-        let filteredList = listOfRestaurant.filter(item=>item.avgRating >4);
+        let filteredList = listOfRestaurant.filter(item=>item.info.avgRating > 4);
             setListOfRestaurant(filteredList)
+
         }
         }>Top Rated Restaurants</button>
         <label>Username :</label>

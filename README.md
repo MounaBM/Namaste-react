@@ -36,44 +36,61 @@
 
 -Different dev and production bundles
 
-#Namaste Food
+# Namaste Food
 
-Header
-Logo
-Nav Items
-Body
-Search
-RestaurantContainer
-RestaurantCard
+-Header
+-Logo
+-Nav Items
+-Body
+-Search
+-RestaurantContainer
+-RestaurantCard
  - Img
  - Name of Res, Star Rating, cuisine, delery tie
-Footer
-Copyright
-Links
-Address
-Contact */
-Two types of Export/Import
+-Footer
+-Copyright
+-Links
+-Address
+-Contact */
+-Two types of Export/Import
 
-Default Export/Import
+-Default Export/Import
 export default Component; import Component from "path";
 
-Named Export/Import
+-Named Export/Import
 export const Component; import {Component} from "path";
 
-#React Hooks
+# React Hooks
 (Normal JS utility functions)
 
 -useState() - Superpowerful State Variables in react
 -useEffect()
 
-#2 types Routing in web apps
+# 2 types Routing in web apps
 -Client Side Routing
 -Server Side Routing
 
-#Redux Toolkit
+# Redux Toolkit
 -Install @reduxjs/toolkit and react-redux
 -Build our store
 -Connect our store to our app
 -Slice (cartSlice)
 -dispatch(action)
 -Selector
+
+# Types of testing (devloper)
+-Unit Testing
+-Integration Testing
+-End to End Testing - e2e testing
+
+# Setting up Testing in our app
+-Install React Testing Library
+-Installed jest
+-Installed Babel dependencies
+-Configure Babel
+-Configure Parcel Config file to disable default babel transpilation
+-Jest - npx jest --init
+-Install jsdom library
+-Install @babel/preset-react - to make JSX work in test cases
+-Include @babel/preset-react inside my babel config
+-npm i -D @testing-library/jest-dom
