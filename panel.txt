@@ -1,44 +1,112 @@
-Implement toggle functionality for the right-side adjudication timeline panel.
+The current right-side timeline panel UI is not matching the provided screenshot design.
+Please redesign the component to be pixel-close to the screenshot with the exact structure, spacing, colors, typography, borders, icons, and alignment.
 
-Requirements:
+UI Requirements:
 
-* Add a toggle/collapse button at the top-right corner of the panel.
-* Clicking the toggle button should:
+* Create a fixed right-side adjudication timeline panel exactly like the screenshot.
+* Panel width, padding, card spacing, and overall proportions must visually match the reference image.
+* Use a very light gray panel background (#f7f7f8 style).
+* Add subtle left border/shadow separating the panel from the main content.
 
-  * Collapse the panel smoothly to a minimal width.
-  * Expand back to full width when clicked again.
-* Use smooth animation transitions (`width`, `transform`, and `opacity` transitions).
-* Preserve the UI alignment and spacing during animation.
+Header Section:
+
+* Header text: “ADJUDICATION TIMELINE”
+* Font should be uppercase, medium-bold, gray color, with small letter spacing.
+* Place 3 circular action icons aligned horizontally on the top-right:
+
+  * Info icon
+  * User/Profile icon
+  * Lightning/Bolt icon
+* Icons must have:
+
+  * Circular light background
+  * Thin border
+  * Same size and spacing as screenshot
+  * Hover state with subtle gray background
+
+Timeline Design:
+
+* Add a vertical connector line aligned perfectly through timeline icons.
+* Timeline items should have equal spacing and clean alignment.
+* Cards must have:
+
+  * White background
+  * Thin gray border
+  * Slight rounded corners
+  * Soft shadow
+  * Exact padding like screenshot
+
+Timeline Items:
+
+1. Received
+
+* Green outlined mail icon
+* Title bold and dark
+* Timestamp aligned right in gray text
+* White card background
+
+2. SOP Automated (active state)
+
+* Blue filled lightning icon
+* Blue highlighted card background
+* Blue border
+* Subtitle text:
+  “P966, 8 steps, 1 field updated”
+* Active item should visually stand out exactly like screenshot
+
+3. Complete
+
+* Green check-circle icon
+* Same card style as “Received”
+
+Typography:
+
+* Use clean modern font styling.
+* Match font sizes, weights, and spacing exactly.
+* Titles slightly bold.
+* Timestamp smaller and gray.
+* Subtitle smaller with muted gray tone.
+
+Toggle Functionality:
+
+* Add collapse/expand toggle functionality.
+* Toggle should smoothly collapse the panel width.
+* Use ChevronLeft / ChevronRight icons.
+* Keep animation smooth without layout breaking.
 * When collapsed:
 
-  * Show only the toggle icon or a slim sidebar indicator.
-  * Hide timeline content with smooth fade effect.
+  * Only icons or slim sidebar visible
+  * Timeline content hidden smoothly
 * When expanded:
 
-  * Restore full timeline content and scroll behavior.
-* Toggle icon behavior:
-
-  * Use ChevronRight when collapsed.
-  * Use ChevronLeft when expanded.
-  * Animate icon rotation smoothly.
-* Panel should remain fixed on the right side of the screen.
-* Maintain responsive behavior:
-
-  * Desktop → collapsible sidebar
-  * Mobile/tablet → slide-in drawer style panel
-* Keep the exact visual style matching the provided UI design.
-* Add hover effects for the toggle button.
-* Ensure no layout shifting happens in the main content area during toggle.
+  * Restore full UI exactly
 
 Technical Requirements:
 
-* Use React + TypeScript (TSX).
-* Use `useState` for toggle state management.
-* Use CSS transitions or Framer Motion for smooth animations.
-* Create reusable component structure:
+* React + TypeScript (TSX)
+* Use reusable components:
 
-  * `TimelinePanel`
-  * `TimelineHeader`
-  * `TimelineItem`
-  * `ToggleButton`
-* Keep code clean, modular, and production-ready.
+  * TimelinePanel
+  * TimelineHeader
+  * TimelineItem
+  * ToggleButton
+* Use CSS Modules, Tailwind, or styled-components.
+* Add smooth transitions for hover and toggle states.
+* Responsive support:
+
+  * Desktop → fixed sidebar
+  * Mobile → drawer style slide panel
+
+Important:
+
+* Current UI looks different from screenshot.
+* Please match the screenshot visually as closely as possible.
+* Focus especially on:
+
+  * spacing
+  * icon alignment
+  * card heights
+  * timeline line position
+  * panel width
+  * active blue state styling
+  * exact visual hierarchy
