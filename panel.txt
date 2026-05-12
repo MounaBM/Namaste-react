@@ -1,0 +1,44 @@
+Implement toggle functionality for the right-side adjudication timeline panel.
+
+Requirements:
+
+* Add a toggle/collapse button at the top-right corner of the panel.
+* Clicking the toggle button should:
+
+  * Collapse the panel smoothly to a minimal width.
+  * Expand back to full width when clicked again.
+* Use smooth animation transitions (`width`, `transform`, and `opacity` transitions).
+* Preserve the UI alignment and spacing during animation.
+* When collapsed:
+
+  * Show only the toggle icon or a slim sidebar indicator.
+  * Hide timeline content with smooth fade effect.
+* When expanded:
+
+  * Restore full timeline content and scroll behavior.
+* Toggle icon behavior:
+
+  * Use ChevronRight when collapsed.
+  * Use ChevronLeft when expanded.
+  * Animate icon rotation smoothly.
+* Panel should remain fixed on the right side of the screen.
+* Maintain responsive behavior:
+
+  * Desktop → collapsible sidebar
+  * Mobile/tablet → slide-in drawer style panel
+* Keep the exact visual style matching the provided UI design.
+* Add hover effects for the toggle button.
+* Ensure no layout shifting happens in the main content area during toggle.
+
+Technical Requirements:
+
+* Use React + TypeScript (TSX).
+* Use `useState` for toggle state management.
+* Use CSS transitions or Framer Motion for smooth animations.
+* Create reusable component structure:
+
+  * `TimelinePanel`
+  * `TimelineHeader`
+  * `TimelineItem`
+  * `ToggleButton`
+* Keep code clean, modular, and production-ready.
