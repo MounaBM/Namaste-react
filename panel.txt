@@ -1,3 +1,5 @@
 In the retrieval failed scenario, we have two buttons, right? One is “Try Again” and another one is “Report Issue”.
 For “Try Again”, I am calling the timeline/claimsid API. What should be shown when the user clicks on “Report Issue”?
 Which parameter should we take from the backend to handle incomplete data error in the frontend?
+
+These two points are blocking me, so I can’t proceed further.
